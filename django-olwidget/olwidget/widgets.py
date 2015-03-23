@@ -72,7 +72,8 @@ class Map(forms.Widget):
         attrs = attrs or {}
         # Get an arbitrary unique ID if we weren't handed one (e.g. widget used
         # outside of a form).
-        map_id = attrs.get('id', "id_%s" % id(self))
+        #map_id = attrs.get('id', "id_%s" % id(self))
+        map_id = self.options.get('id', "id_%s" % id(self))
 
         layer_js = []
         layer_html = []
