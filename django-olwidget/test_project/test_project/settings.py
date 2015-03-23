@@ -47,7 +47,7 @@ MEDIA_ROOT = os.path.join(SETTINGS_ROOT, "media/")
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/'
-STATIC_URL = MEDIA_URL
+STATIC_URL = '/static/' 
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -86,10 +86,16 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.gis',
+    'django.contrib.staticfiles',
+
+    'django_extensions',
 
     'testolwidget',
     'olwidget'
 )
+
+#define a test runner (required since 1.6, generates a warning with 1.7)
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 GOOGLE_API_KEY = "ABQIAAAARaukg-vCnyMKCmf7W1mdOhQCULP4XOMyhPd8d_NrQQEO8sT8XBTLlWMmpTlKIHpKhd2GXLaZc6gHJA" # localhost:8000
 #GOOGLE_API_KEY = "ABQIAAAARaukg-vCnyMKCmf7W1mdOhTUM1TfCWCpQbByeYgbUi08Ugq4ShQ2qaNvdgbJz36kf2mKYgbUTR6R7A" # 18.85.23.189:8000

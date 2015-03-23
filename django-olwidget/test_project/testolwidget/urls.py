@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 
 def build_pattern(name, action="show"):
     return url("^%s/(?P<object_id>\d+)/%s$" % (name, action),

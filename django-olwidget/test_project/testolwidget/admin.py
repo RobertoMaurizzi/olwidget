@@ -22,6 +22,7 @@ class TestAdminForm(forms.ModelForm):
 
     class Meta:
         model = Country
+        fields = "__all__"
 
 class CountryAdmin(GeoModelAdmin):
     form = TestAdminForm

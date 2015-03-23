@@ -26,10 +26,10 @@ examples:</p>
 <p>OLWidget can be used with custom forms, ModelForm's, as a standalone widget (as above), and for display maps with clickable popup info boxes.
 </p>
 <ul>
-    <li><a href='{% url edit_alienactivity 4 %}'>Custom forms</a></li>
-    <li>Model forms -- <a href='{% url edit_tree 1 %}'>basic</a> and <a href='{% url edit_tree_custom 1 %}'>customized</a>.</li>
-    <li><a href='{% url show_countries %}'>Info maps</a></li>
-    <li><a href='{% url edit_capitals %}'>Mixed editable and info maps</a></li>
+    <li><a href='{% url "edit_alienactivity" 4 %}'>Custom forms</a></li>
+    <li>Model forms -- <a href='{% url "edit_tree" 1 %}'>basic</a> and <a href='{% url "edit_tree_custom" 1 %}'>customized</a>.</li>
+    <li><a href='{% url "show_countries" %}'>Info maps</a></li>
+    <li><a href='{% url "edit_capitals" %}'>Mixed editable and info maps</a></li>
 </ul>
 {% endblock %}
 

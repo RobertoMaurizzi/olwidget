@@ -115,3 +115,17 @@ def options_for_field(db_field):
             geometry = ['polygon', 'point', 'linestring']
 
     return { 'geometry': geometry, 'isCollection': is_collection, }
+
+from collections import OrderedDict
+def OrderedDict_insertat(od, pos, key, value):
+   """replace SortedDict.insert ugly but fast (~24microsec)"""
+   if isinstance(od, OrderedDict):
+       pre = od.items()[:pos]
+       pre.append((key, value))
+       post = od.items()[pos:]
+       od.clear()
+       od.update(pre)
+       od.update(post)
+   else:
+       #this should be an old django.django.utils.datastructures.SortedDict
+       od.insert(pos, key, value)
