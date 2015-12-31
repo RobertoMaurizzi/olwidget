@@ -304,6 +304,9 @@ class EditableLayer(BaseVectorLayer):
             'STATIC_URL': settings.STATIC_URL,
         }
         context.update(self.get_extra_context())
+        option_attrs = self.options.get("attrs", None)
+        if option_attrs and isinstance(attrs, dict):
+          attrs.update(self.options["attrs"])
         js = mark_safe(render_to_string(self.template, context))
         html = mark_safe(forms.Textarea().render(name, wkt, attrs))
         return (js, html)
